@@ -1,0 +1,24 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+#canvas{
+    border:2px solid red;
+}
+
+.bottoneColori{
+    border-radius: 50%;
+    width:20px;
+    height:20px;
+}
+
+#coloreBluBtn{
+    background-color:blue;
+}
+
+#coloreRossoBtn{
+    background-color:red;
+}
