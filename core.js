@@ -1,5 +1,10 @@
 let lineWidth = 20;
 let coloreLinea = "red";
+let coloreBackground = "white";
+let gommaWidth = 20;
+let usingPencil = true;
+let usingGomma = false;
+
 
 window.addEventListener("load", () => {
     const canvas = document.querySelector("#canvas");
@@ -30,7 +35,10 @@ window.addEventListener("load", () => {
 
     function draw(e){
         if(!painting) return;
-        ctx.lineWidth = lineWidth;
+        if(usingGomma)
+            ctx.lineWidth = gommaWidth;
+        else if(usingPencil)
+            ctx.lineWidth = lineWidth;
         ctx.lineCap = "round";
         ctx.strokeStyle = coloreLinea; // colore
 
@@ -50,12 +58,46 @@ lineWidthBtn.addEventListener("click", () => {
     lineWidth = Number(lineWidthValue.value);
 });
 
+/*
+ * BOTTONI DEI COLORI
+ */
 let coloreBluBtn = document.getElementById("coloreBluBtn");
 coloreBluBtn.addEventListener("click", () => {
+    usingGomma = false;
+    usingPencil = true;
     coloreLinea = "blue";
 });
 
 let coloreRossoBtn = document.getElementById("coloreRossoBtn");
 coloreRossoBtn.addEventListener("click", () => {
+    usingGomma = false;
+    usingPencil = true;
     coloreLinea = "red";
 });
+
+let coloreArancioneBtn = document.getElementById("coloreArancioneBtn");
+coloreArancioneBtn.addEventListener("click", () => {coloreLinea = "orange"; usingGomma = false; usingPencil = true; });
+
+let coloreVerdeBtn = document.getElementById("coloreVerdeBtn");
+coloreVerdeBtn.addEventListener("click", () => {coloreLinea = "green"; usingGomma = false; usingPencil = true;});
+
+
+
+/*
+ * GOMMA
+ */
+
+let gommaBtn = document.getElementById("gommaBtn");
+gommaBtn.addEventListener("click", () => {
+    coloreLinea = coloreBackground;
+    usingGomma = true;
+    usingPencil = false;
+});
+
+let gommaWidthBtn = document.getElementById("gommaWidthBtn");
+gommaWidthBtn.addEventListener("click", () => {
+    gommaWidth = document.getElementById("gommaWidthValue").value;
+});
+
+
+

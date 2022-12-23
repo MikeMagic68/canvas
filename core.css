@@ -22,3 +22,16 @@
 #coloreRossoBtn{
     background-color:red;
 }
+
+#coloreArancioneBtn{
+    background-color:orange;
+}
+
+#coloreVerdeBtn{
+    background-color:green;
+}
+
+#gommaBtn{
+    background-color:transparent;
+    border-color:transparent;
+}
